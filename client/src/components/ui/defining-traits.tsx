@@ -1,48 +1,56 @@
 import { motion } from "framer-motion";
-import { Users, Mic, Award, Zap } from "lucide-react";
+import { Users, Mic, Award, Zap, Lightbulb } from "lucide-react";
 
 const traits = [
   {
     icon: Users,
     title: "Community Leader",
-    description: "Leading 800+ peers at GirlScript.",
-    color: "from-pink-500 to-rose-500",
+    description: "Empowering 800+ peers",
+    color: "text-pink-500",
+    bg: "bg-pink-500/10",
+    border: "group-hover:border-pink-500/30"
   },
   {
     icon: Mic,
     title: "Communicator",
-    description: "Mentoring 300+ students in Cloud.",
-    color: "from-violet-500 to-purple-500",
+    description: "Mentoring 300+ in Cloud",
+    color: "text-violet-500",
+    bg: "bg-violet-500/10",
+    border: "group-hover:border-violet-500/30"
   },
   {
-    icon: Zap,
+    icon: Lightbulb,
     title: "Innovator",
-    description: "Building Nutrilia & Aspirobot.",
-    color: "from-blue-500 to-cyan-500",
+    description: "Problem Solver & Builder",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+    border: "group-hover:border-blue-500/30"
   },
 ];
 
 export function DefiningTraits() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mx-auto mt-12 md:mt-20 px-4">
+    <div className="flex flex-wrap justify-center gap-4 w-full max-w-4xl mx-auto mt-8 md:mt-12 px-4">
       {traits.map((trait, index) => (
         <motion.div
           key={trait.title}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-          whileHover={{ y: -5, scale: 1.02 }}
-          className="relative group p-6 rounded-2xl bg-card/40 border border-white/10 backdrop-blur-md overflow-hidden hover:border-primary/30 transition-all duration-300 shadow-lg hover:shadow-primary/5"
+          transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+          whileHover={{ y: -3, scale: 1.02 }}
+          className={`
+            relative group flex items-center gap-3 px-5 py-3 
+            rounded-xl bg-card/50 border border-border/50 backdrop-blur-sm 
+            cursor-default transition-all duration-300 shadow-sm hover:shadow-md
+            ${trait.border}
+          `}
         >
-          <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${trait.color} transition-opacity duration-500`} />
-          
-          <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-            <div className={`p-3 rounded-full bg-background/50 border border-white/10 text-primary group-hover:scale-110 transition-transform duration-300 bg-gradient-to-br ${trait.color} bg-clip-text text-transparent`}>
-              <trait.icon className={`w-8 h-8 stroke-[1.5] text-foreground`} style={{ stroke: "url(#gradient)" }} /> 
-              {/* Fallback for icon color since bg-clip-text doesn't work on SVGs directly usually, using wrapper */}
-            </div>
-            <h3 className="font-heading font-bold text-lg tracking-tight">{trait.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{trait.description}</p>
+          <div className={`p-2 rounded-lg ${trait.bg} ${trait.color}`}>
+            <trait.icon className="w-4 h-4" />
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-sm leading-tight text-foreground/90">{trait.title}</h3>
+            <p className="text-xs text-muted-foreground">{trait.description}</p>
           </div>
         </motion.div>
       ))}
