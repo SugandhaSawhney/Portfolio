@@ -1,0 +1,60 @@
+Sugandha Sawhney
+LinkedIn: linkedin.com/in/sugandha-sawhney-574072327
+GitHub: github.com/SugandhaSawhney
+LeetCode: leetcode.com/SugandhaSawhney
+Education
+Email: sawhneysugandha580@gmail.com
+Mobile: +91-7015892092
+Indira Gandhi Delhi Technical University for Women
+Bachelor of Technology, Information Technology | GPA : 9.29
+Khemo Devi Public School
+Class XII (CBSE) | 86.4%
+Sacred Heart Convent Sr. Sec. School
+Class X (CBSE) | 98%
+Technical Skills
+Delhi, India
+2024-2028
+Narela, Delhi, India
+2022– 2024
+Yamunanagar, Haryana, India
+2010– 2022
+Programming Languages: Proficient- C++, Python; Intermediate- SQL, JavaScript, HTML/CSS, React.js
+Software and Tools: Git, GitHub, VS Code, Google Colab
+Experience
+Generative AI and Prompt Engineering Internship
+IT Department, IGDTUW
+Delhi, India
+Jun 2025– Jul 2025
+• Worked on Natural Language Processing and Large Language Models (GPT-3.5, Gemini), applying prompt
+engineering and Retrieval-Augmented Generation (RAG) techniques while exploring fine-tuning and model
+deployment concepts.
+Program Facilitator
+Google Cloud Arcade Program, Cohort 2
+Remote
+August 2025– October 205
+• Volunteered in mentoring and guiding 300+ participants in learning Google Cloud technologies through hands-on
+labs, discussions, and doubt-solving sessions.
+Campus Ambassador | Contributor
+GirlScript Summer of Code
+Remote
+July 2025– October 2025
+• Created and led a community of 800+ students, organizing events and peer-learning sessions while actively
+contributing to open-source projects, improving features, and enhancing collaborative development.
+Projects
+Aspirobot | Generative AI
+• Developed an AI-powered platform with Resume Analyzer, Career Roadmap Generator, and smart chatbot for
+career guidance.
+• Implemented LLM-based ATS resume analysis, roadmap visualization (Mermaid.js), and personalized AI-driven
+suggestions.
+• Tech Stack: React.js, Python, Streamlit, Gemini, Mermaid.js (GitHub Link)
+Jharkhand Darshan | SIH 2025
+• Developed a smart tourism platform that redefined Jharkhand’s travel experiencethrough safety, authenticity, and
+cultural immersion, empowering locals and promoting eco-tourism.
+• Integrated AI itinerary planner, Safe Homestays, AR/VR heritage tours, Blockchain marketplace, multilingual
+chatbot, and police-linked safety check-ins for secure, seamless travel.
+• Tech Stack: React.js + vite, Tailwind CSS, Gemini APIs, LangChain, Node.js + Express.js, Firebase, MongoDB,
+Blockchain (Ethereum), Open street Map, PostgreSQL/MySQL (Demo Link)
+Achievements
+Smart India Hackathon 2025
+• Shortlisted among top teams from 250+ entries in internal SIH and nominated for the National Online Screening
+Round.
