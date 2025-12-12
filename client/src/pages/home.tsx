@@ -60,8 +60,17 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground">
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-300 ${isScrolled ? "glass scrolled" : "glass"}`}>
-        <Logo />
-        <div className="flex items-center gap-4">
+        <div className="flex-1 flex justify-start">
+           <Logo />
+        </div>
+        
+        <div className="flex-1 flex justify-center">
+          <Badge variant="outline" className="hidden md:flex px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider border-primary/20 bg-background/50 backdrop-blur-md shadow-sm whitespace-nowrap">
+             Portfolio of Sugandha Sawhney
+          </Badge>
+        </div>
+
+        <div className="flex-1 flex items-center justify-end gap-4">
           <ThemeToggle />
           <Button 
             variant="default" 
@@ -93,10 +102,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <Badge variant="secondary" className="px-6 py-2 rounded-full text-xs font-medium uppercase tracking-wider border border-primary/20 bg-background/50 backdrop-blur-md shadow-sm">
-              <Sparkles className="w-3 h-3 mr-2 text-primary animate-pulse" />
-              Portfolio of Sugandha Sawhney
-            </Badge>
+             <blockquote className="font-serif italic text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed border-b border-primary/20 pb-4">
+                "Success is not final, failure is not fatal: it is the courage to continue that counts."
+                <footer className="text-sm font-sans not-italic text-primary mt-2 uppercase tracking-widest font-bold">— Winston Churchill</footer>
+              </blockquote>
           </motion.div>
 
           <motion.h1 
@@ -157,10 +166,6 @@ export default function Home() {
       <Section id="about" className="relative py-24">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div className="md:col-span-5 lg:col-span-5 space-y-8 sticky top-32">
-            <div className="inline-block p-3 rounded-2xl bg-primary/10 mb-2">
-              <Logo />
-            </div>
-            
             <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
               The Mindset <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Behind The Code</span>
@@ -168,19 +173,42 @@ export default function Home() {
             
             <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                I am a 2nd-year B.Tech Information Technology student at <span className="text-foreground font-semibold border-b border-primary/30 hover:border-primary transition-colors cursor-default">IGDTUW</span>.
+                I am a 2nd-year B.Tech Information Technology student at <span className="text-foreground font-semibold border-b border-primary/30 hover:border-primary transition-colors cursor-default">Indira Gandhi Delhi Technical University for Women</span>.
               </p>
               
-              <blockquote className="border-l-4 border-primary pl-6 py-4 my-6 italic text-foreground text-lg font-serif bg-card/30 rounded-r-2xl pr-6 shadow-sm">
-                "Success is not final, failure is not fatal: it is the courage to continue that counts."
-              </blockquote>
+              <p>
+                For me, technology is a tool for empowerment. My journey is driven by a simple belief: <span className="text-foreground font-medium italic">"Growth happens outside the comfort zone."</span> Whether I'm fine-tuning LLMs or leading a community of hundreds, I approach every challenge with curiosity and resilience.
+              </p>
 
               <p>
-                My journey is driven by a simple belief: <span className="text-foreground font-medium">"Growth happens outside the comfort zone."</span> Whether I'm fine-tuning LLMs or leading a community of hundreds, I approach every challenge with curiosity.
+                I don't just build apps; I build solutions that impact lives—like Nutrilia, where I'm combining AI with holistic health to solve real-world problems.
               </p>
             </div>
+
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="bg-card/40 p-4 rounded-xl border border-border/50">
+                 <h4 className="text-2xl font-bold text-primary mb-1">800+</h4>
+                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Students Mentored</p>
+                 <p className="text-xs text-muted-foreground/50">GirlScript Summer of Code</p>
+              </div>
+              <div className="bg-card/40 p-4 rounded-xl border border-border/50">
+                 <h4 className="text-2xl font-bold text-primary mb-1">9.29</h4>
+                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Current GPA</p>
+                 <p className="text-xs text-muted-foreground/50">B.Tech IT (IGDTUW)</p>
+              </div>
+              <div className="bg-card/40 p-4 rounded-xl border border-border/50">
+                 <h4 className="text-2xl font-bold text-primary mb-1">300+</h4>
+                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Cloud Learners</p>
+                 <p className="text-xs text-muted-foreground/50">Program Facilitator</p>
+              </div>
+              <div className="bg-card/40 p-4 rounded-xl border border-border/50">
+                 <h4 className="text-lg font-bold text-primary mb-1">Always Learning</h4>
+                 <p className="text-xs text-muted-foreground uppercase tracking-wider">Exploring</p>
+                 <p className="text-xs text-muted-foreground/50">Blockchain & RAG</p>
+              </div>
+            </div>
             
-            <div className="flex gap-3 pt-2">
+            <div className="flex gap-3 pt-4">
               {[
                 { icon: Linkedin, link: "https://linkedin.com/in/sugandha-sawhney-574072327" },
                 { icon: Github, link: "https://github.com/SugandhaSawhney" },
@@ -202,84 +230,46 @@ export default function Home() {
           
           <div className="md:col-span-7 lg:col-span-7 space-y-8">
              <div className="bg-card/40 p-8 rounded-3xl border border-border/50 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all duration-500">
-              <h3 className="text-xl font-heading font-bold mb-6 flex items-center gap-3">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <Terminal className="h-5 w-5 text-primary" /> 
-                </div>
-                Technical Arsenal
-              </h3>
-              
-              <div className="space-y-4">
-                <SkillBar skill="C++" level={75} delay={0.1} />
-                <SkillBar skill="Python" level={85} delay={0.2} />
-                <SkillBar skill="Generative AI & Prompt Engineering" level={80} delay={0.3} />
-                <SkillBar skill="SQL" level={75} delay={0.4} />
-                <SkillBar skill="React.js & JavaScript" level={72} delay={0.5} />
-              </div>
-              
-              <Separator className="my-8 opacity-50" />
-              
-              <div className="grid sm:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <h4 className="font-bold text-foreground flex items-center gap-2 text-sm uppercase tracking-wide">
-                    <Database className="w-4 h-4 text-primary" /> Core Concepts
-                  </h4>
-                  <ul className="text-sm text-muted-foreground space-y-2.5">
-                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/60" />DSA (In Progress)</li>
-                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/60" />DBMS</li>
-                    <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary/60" />OOPs</li>
-                  </ul>
-                </div>
-                <div className="space-y-4">
-                  <h4 className="font-bold text-foreground flex items-center gap-2 text-sm uppercase tracking-wide">
-                    <Brain className="w-4 h-4 text-primary" /> Tools & Tech
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {["Git", "GitHub", "VS Code", "Streamlit", "Colab", "LangChain", "Figma"].map(tool => (
-                      <Badge key={tool} variant="outline" className="bg-background/50 hover:bg-primary/10 transition-colors cursor-default">{tool}</Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary/5 to-transparent p-8 rounded-3xl border border-primary/10 hover:border-primary/30 transition-all duration-500">
-               <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
-                 <div className="p-2 bg-primary/10 rounded-lg">
-                   <GraduationCap className="w-5 h-5 text-primary" />
-                 </div>
-                 Education
-               </h3>
+               <h3 className="text-xl font-heading font-bold mb-8">Experience Timeline</h3>
                
-               <div className="space-y-8 relative before:absolute before:left-[9px] before:top-2 before:bottom-2 before:w-[2px] before:bg-gradient-to-b before:from-primary before:to-transparent">
-                 <div className="relative pl-8 group">
-                    <span className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-4 border-background bg-primary z-10 group-hover:scale-125 transition-transform" />
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
-                      <span className="font-bold text-lg group-hover:text-primary transition-colors">IGDTUW, Delhi</span>
-                      <Badge variant="secondary" className="font-mono text-xs w-fit mt-1 sm:mt-0">GPA: 9.29</Badge>
+               <div className="space-y-12 relative border-l border-border/30 ml-3">
+                  {[
+                    {
+                      role: "Gen AI & Prompt Engineering Intern",
+                      org: "IGDTUW",
+                      date: "JUN 2025 - JUL 2025",
+                      desc: "Worked on NLP, LLMs (GPT-3.5, Gemini), and RAG techniques."
+                    },
+                    {
+                      role: "Program Facilitator",
+                      org: "GOOGLE CLOUD ARCADE",
+                      date: "AUG 2025 - OCT 2025",
+                      desc: "Mentored 300+ participants in Google Cloud technologies."
+                    },
+                    {
+                      role: "Campus Ambassador",
+                      org: "GIRLSCRIPT SUMMER OF CODE",
+                      date: "JUL 2025 - OCT 2025",
+                      desc: "Led a community of 800+ students, organizing peer-learning sessions."
+                    }
+                  ].map((exp, i) => (
+                    <div key={i} className="relative pl-8 group">
+                      <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border border-border bg-background group-hover:bg-primary group-hover:border-primary transition-colors duration-300" />
+                      <h4 className="text-lg font-bold font-heading text-foreground group-hover:text-primary transition-colors">{exp.role}</h4>
+                      <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">{exp.org} | {exp.date}</p>
+                      <p className="text-sm text-muted-foreground/80 leading-relaxed">{exp.desc}</p>
                     </div>
-                    <p className="text-sm text-muted-foreground">B.Tech Information Technology (2024-2028)</p>
-                 </div>
-                 
-                 <div className="relative pl-8 group">
-                    <span className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-4 border-background bg-muted-foreground z-10 group-hover:bg-primary transition-colors" />
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
-                      <span className="font-medium group-hover:text-primary transition-colors">Khemo Devi Public School</span>
-                      <Badge variant="secondary" className="font-mono text-xs w-fit mt-1 sm:mt-0">86.4%</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Class XII (CBSE) | 2022-2024</p>
-                 </div>
-
-                 <div className="relative pl-8 group">
-                    <span className="absolute left-0 top-1.5 w-5 h-5 rounded-full border-4 border-background bg-muted-foreground z-10 group-hover:bg-primary transition-colors" />
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
-                      <span className="font-medium group-hover:text-primary transition-colors">Sacred Heart Convent</span>
-                      <Badge variant="secondary" className="font-mono text-xs w-fit mt-1 sm:mt-0">98%</Badge>
-                    </div>
-                    <p className="text-sm text-muted-foreground">Class X (CBSE)</p>
-                 </div>
+                  ))}
+                  
+                  <div className="relative pl-8 group pt-4">
+                      <span className="absolute -left-[5px] top-6 h-2.5 w-2.5 rounded-full border border-border bg-background animate-pulse border-primary bg-primary" />
+                      <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
+                        <h4 className="text-base font-bold font-heading text-primary">Open to Opportunities</h4>
+                        <p className="text-xs text-muted-foreground/80 leading-relaxed mt-1">Currently seeking internships and collaborative projects. Ready to bring value to your team.</p>
+                      </div>
+                  </div>
                </div>
-            </div>
+             </div>
           </div>
         </div>
       </Section>
@@ -490,35 +480,61 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Achievement Section */}
-      <Section className="bg-secondary/20 py-32 relative overflow-hidden">
-         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
-         
-         <div className="max-w-4xl mx-auto text-center relative z-10">
-            <h3 className="text-4xl font-heading font-bold mb-12 flex justify-center items-center gap-3">
-              <Trophy className="h-10 w-10 text-yellow-500" /> Key Achievements
-            </h3>
+      {/* Milestones Section */}
+      <Section className="bg-secondary/20 py-24">
+         <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+               <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">Milestones</p>
+               <h3 className="text-3xl md:text-5xl font-heading font-bold">Achievements & Recognition</h3>
+            </div>
             
-            <Card className="glass-card border-primary/20 relative overflow-hidden group text-left max-w-3xl mx-auto transform hover:scale-[1.02] transition-transform duration-500 rounded-[2.5rem]">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Trophy className="w-48 h-48 rotate-12 text-yellow-500" />
-              </div>
-              <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-yellow-500/20 blur-[80px] rounded-full" />
-              
-              <CardHeader className="p-10 pb-4">
-                <div className="flex justify-between items-start mb-4">
-                  <Badge className="bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 border-yellow-500/30 hover:bg-yellow-500/30 px-4 py-1.5 text-sm">National Winner</Badge>
-                  <span className="text-sm font-mono text-muted-foreground">2025</span>
-                </div>
-                <CardTitle className="text-3xl md:text-4xl font-heading font-bold">Smart India Hackathon 2025</CardTitle>
-                <CardDescription className="text-lg mt-2">National Level Hackathon | Ministry of Education</CardDescription>
-              </CardHeader>
-              <CardContent className="p-10 pt-4">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Shortlisted among top teams from <span className="text-foreground font-bold">250+ entries</span> in internal SIH and nominated for the National Online Screening Round. Recognized for developing an innovative solution in smart tourism and cultural heritage preservation using AI and Blockchain technology.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="grid md:grid-cols-3 gap-6">
+                <Card className="glass-card border-white/5 bg-card/30 hover:bg-card/50 transition-colors duration-300">
+                   <CardContent className="p-8 space-y-4">
+                      <div className="p-3 bg-yellow-500/10 rounded-full w-fit">
+                         <Trophy className="w-6 h-6 text-yellow-500" />
+                      </div>
+                      <div>
+                         <h4 className="text-lg font-bold mb-1">Smart India Hackathon</h4>
+                         <p className="text-2xl font-bold mb-1">2025</p>
+                         <p className="text-xs text-muted-foreground uppercase tracking-wider">2025</p>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                         Shortlisted among top teams from 250+ entries in internal SIH and nominated for the National Online Screening Round.
+                      </p>
+                   </CardContent>
+                </Card>
+
+                <Card className="glass-card border-white/5 bg-card/30 hover:bg-card/50 transition-colors duration-300">
+                   <CardContent className="p-8 space-y-4">
+                      <div className="p-3 bg-purple-500/10 rounded-full w-fit">
+                         <Sparkles className="w-6 h-6 text-purple-500" />
+                      </div>
+                      <div>
+                         <h4 className="text-lg font-bold mb-1">GPA 9.29</h4>
+                         <p className="text-2xl font-bold mb-1">2024-Present</p>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                         Consistent academic excellence in B.Tech Information Technology at IGDTUW.
+                      </p>
+                   </CardContent>
+                </Card>
+
+                <Card className="glass-card border-white/5 bg-card/30 hover:bg-card/50 transition-colors duration-300">
+                   <CardContent className="p-8 space-y-4">
+                      <div className="p-3 bg-pink-500/10 rounded-full w-fit">
+                         <Award className="w-6 h-6 text-pink-500" />
+                      </div>
+                      <div>
+                         <h4 className="text-lg font-bold mb-1">Community Leader</h4>
+                         <p className="text-2xl font-bold mb-1">2025</p>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                         Successfully led a community of 800+ students during GirlScript Summer of Code.
+                      </p>
+                   </CardContent>
+                </Card>
+            </div>
          </div>
       </Section>
 
