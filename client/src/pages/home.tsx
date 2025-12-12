@@ -151,19 +151,18 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer p-3 rounded-full hover:bg-white/5 transition-colors"
-          onClick={() => scrollToSection("about")}
-        >
-          <ChevronDown className="h-6 w-6 text-muted-foreground" />
-        </motion.div>
+        
       </section>
 
       {/* About Section */}
       <Section id="about" className="relative py-24">
+        <Badge
+  className="self-start mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 
+             transition-colors rounded-full px-4 py-1.5 text-sm uppercase tracking-widest font-bold"
+>
+  About Me
+</Badge>
+
         <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-start">
           <div className="md:col-span-5 lg:col-span-5 space-y-8 sticky top-32">
             <h2 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
@@ -173,7 +172,7 @@ export default function Home() {
             
             <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                I am a 2nd-year B.Tech Information Technology student at <span className="text-foreground font-semibold border-b border-primary/30 hover:border-primary transition-colors cursor-default">Indira Gandhi Delhi Technical University for Women</span>.
+              Hi! I am Sugandha. I am a 2nd-year B.Tech Information Technology student at <span className="text-foreground font-semibold border-b border-primary/30 hover:border-primary transition-colors cursor-default">Indira Gandhi Delhi Technical University for Women</span>.
               </p>
               
               <p>
@@ -181,7 +180,7 @@ export default function Home() {
               </p>
 
               <p>
-                I don't just build apps; I build solutions that impact lives—like Nutrilia, where I'm combining AI with holistic health to solve real-world problems.
+                I don't just want to build apps; I want to build solutions that impact lives.
               </p>
             </div>
 
@@ -227,52 +226,110 @@ export default function Home() {
               ))}
             </div>
           </div>
-          
-          <div className="md:col-span-7 lg:col-span-7 space-y-8">
-             <div className="bg-card/40 p-8 rounded-3xl border border-border/50 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all duration-500">
-               <h3 className="text-xl font-heading font-bold mb-8">Experience Timeline</h3>
-               
-               <div className="space-y-12 relative border-l border-border/30 ml-3">
-                  {[
-                    {
-                      role: "Gen AI & Prompt Engineering Intern",
-                      org: "IGDTUW",
-                      date: "JUN 2025 - JUL 2025",
-                      desc: "Worked on NLP, LLMs (GPT-3.5, Gemini), and RAG techniques."
-                    },
-                    {
-                      role: "Program Facilitator",
-                      org: "GOOGLE CLOUD ARCADE",
-                      date: "AUG 2025 - OCT 2025",
-                      desc: "Mentored 300+ participants in Google Cloud technologies."
-                    },
-                    {
-                      role: "Campus Ambassador",
-                      org: "GIRLSCRIPT SUMMER OF CODE",
-                      date: "JUL 2025 - OCT 2025",
-                      desc: "Led a community of 800+ students, organizing peer-learning sessions."
-                    }
-                  ].map((exp, i) => (
-                    <div key={i} className="relative pl-8 group">
-                      <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border border-border bg-background group-hover:bg-primary group-hover:border-primary transition-colors duration-300" />
-                      <h4 className="text-lg font-bold font-heading text-foreground group-hover:text-primary transition-colors">{exp.role}</h4>
-                      <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">{exp.org} | {exp.date}</p>
-                      <p className="text-sm text-muted-foreground/80 leading-relaxed">{exp.desc}</p>
-                    </div>
-                  ))}
-                  
-                  <div className="relative pl-8 group pt-4">
-                      <span className="absolute -left-[5px] top-6 h-2.5 w-2.5 rounded-full border border-border bg-background animate-pulse border-primary bg-primary" />
-                      <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
-                        <h4 className="text-base font-bold font-heading text-primary">Open to Opportunities</h4>
-                        <p className="text-xs text-muted-foreground/80 leading-relaxed mt-1">Currently seeking internships and collaborative projects. Ready to bring value to your team.</p>
-                      </div>
-                  </div>
-               </div>
-             </div>
-          </div>
+    <div className="md:col-span-7 lg:col-span-7 space-y-8">
+  <div className="bg-card/40 p-8 rounded-3xl border border-border/50 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all duration-500">
+    <h3 className="text-xl font-heading font-bold mb-8">Education</h3>
+
+    <div className="space-y-12 relative border-l border-border/30 ml-3">
+      {[
+        {
+          title: "Bachelor of Technology — Information Technology",
+          inst: "Indira Gandhi Delhi Technical University for Women",
+          date: "2022 - 2026",
+          desc: "CGPA : 9.29"
+        },
+        {
+          title: "Class XII — CBSE",
+          inst: "Khemo Devi Public School",
+          date: "2021",
+          desc: "Percentage : 86.4%"
+        },
+        {
+          title: "Class X — CBSE",
+          inst: "Sacred Heart Convent Sr. Sec. School",
+          date: "2019",
+          desc: "Percentage : 98%"
+        }
+      ].map((edu, i) => (
+        <div key={i} className="relative pl-8 group">
+          <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border border-border bg-background group-hover:bg-primary group-hover:border-primary transition-colors duration-300" />
+          <h4 className="text-lg font-bold font-heading text-foreground group-hover:text-primary transition-colors">
+            {edu.title}
+          </h4>
+          <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">
+            {edu.inst} | {edu.date}
+          </p>
+          <p className="text-sm text-muted-foreground/80 leading-relaxed">
+            {edu.desc}
+          </p>
+        </div>
+      ))}
+
+    </div>
+    
+  </div>
+  {/* Seeking Opportunities Box */}
+<div className="bg-card/40 p-8 rounded-3xl border border-border/50 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all duration-500 mt-6">
+  <h3 className="text-xl font-heading font-bold mb-6">Currently Seeking Opportunities</h3>
+
+  <div className="relative pl-8 group">
+    <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full 
+      border border-green-500 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.6)]" />
+
+    <p className="text-sm text-muted-foreground/80 leading-relaxed">
+      Actively looking for internships, industry projects, and collaborative 
+      roles where I can contribute to impactful work and expand my technical experience.
+    </p>
+  </div>
+</div>
+
+</div>
+
         </div>
       </Section>
+      
+ 
+<Section id="tech-stack" className="-mt-10 pb-20">
+  <div className="max-w-6xl mx-auto text-center">
+    <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 transition-colors rounded-full px-4 py-1.5 text-sm uppercase tracking-widest font-bold">
+      Tech Stack
+    </Badge>
+    <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">Tools & Technologies</h2>
+    <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12">
+      A snapshot of my favorite languages, frameworks, and tools.
+    </p>
+
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+      {/* Languages & Tools */}
+      {[
+        { name: "C++", level: "Proficient", color: "from-green-400 to-green-600" },
+        { name: "Python", level: "Proficient", color: "from-green-400 to-green-600" },
+        { name: "SQL", level: "Intermediate", color: "from-yellow-400 to-yellow-600" },
+        { name: "JavaScript", level: "Intermediate", color: "from-yellow-400 to-yellow-600" },
+        { name: "React.js", level: "Intermediate", color: "from-blue-400 to-blue-600" },
+        { name: "HTML/CSS", level: "Intermediate", color: "from-orange-400 to-orange-600" },
+        { name: "Git", level: "Proficient", color: "from-gray-400 to-gray-600" },
+        { name: "VS Code", level: "Proficient", color: "from-purple-400 to-purple-600" },
+        { name: "Google Colab", level: "Proficient", color: "from-blue-400 to-blue-600" },
+        { name: "Generative AI and Prompt Engineering", level: "Intermediate", color: "from-cyan-400 to-cyan-600" },
+        { name: "AI/ML", level: "Intermediate", color: "from-pink-400 to-pink-600" },
+      ].map((tech, i) => (
+        <div 
+          key={i} 
+          className={`bg-card/40 border border-border/30 rounded-xl p-3 flex flex-col items-center justify-center hover:scale-105 transition-transform duration-300 shadow-sm`}
+        >
+          <p className="text-sm font-semibold text-foreground">{tech.name}</p>
+          <div className="w-full h-1 mt-2 rounded-full bg-background/50">
+            <div className={`h-1 rounded-full bg-gradient-to-r ${tech.color}`} style={{ width: tech.level === "Proficient" ? "100%" : "60%" }}></div>
+          </div>
+          <span className="text-xs text-muted-foreground mt-1">{tech.level}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</Section>
+
+
 
       {/* Projects Section */}
       <Section id="projects" className="bg-secondary/30 relative py-32 overflow-hidden">
@@ -484,7 +541,9 @@ export default function Home() {
       <Section className="bg-secondary/20 py-24">
          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-               <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">Milestones</p>
+           <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 transition-colors rounded-full px-4 py-1.5 text-sm uppercase tracking-widest font-bold">
+    Milestones
+    </Badge>
                <h3 className="text-3xl md:text-5xl font-heading font-bold">Achievements & Recognition</h3>
             </div>
             
@@ -556,7 +615,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
               <Button size="lg" className="h-16 px-12 rounded-full text-lg shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 bg-primary text-primary-foreground font-bold" onClick={() => window.location.href = "mailto:sawhneysugandha580@gmail.com"}>
-                <Mail className="mr-3 h-5 w-5" /> Say Hello
+                <Mail className="mr-3 h-5 w-5" /> Connect With Me
               </Button>
               <Button variant="outline" size="lg" className="h-16 px-12 rounded-full text-lg border-border bg-background/50 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm" onClick={() => window.open(resumeFile, "_blank")}>
                 <Download className="mr-3 h-5 w-5" /> Resume
@@ -584,7 +643,7 @@ export default function Home() {
             
             <div className="pt-20 border-t border-border/40 mt-16 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground font-medium">
               <span>© 2025 Sugandha Sawhney.</span>
-              <span className="mt-2 md:mt-0 flex items-center gap-2">Designed & Built with <span className="text-red-500 animate-pulse text-lg">♥</span></span>
+              <span className="mt-2 md:mt-0 flex items-center gap-2">Built with React & Passion<span className="text-red-500 animate-pulse text-lg">♥</span></span>
             </div>
           </div>
         </div>
